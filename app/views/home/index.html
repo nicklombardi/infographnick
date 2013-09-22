@@ -1,0 +1,190 @@
+<script>
+ var links = [
+    { "source" : 0, "target" : 1, "value" : 1 },
+    { "source" : 0, "target" : 2, "value" : 1 },
+    { "source" : 0, "target" : 3, "value" : 1 },
+    { "source" : 2, "target" : 4, "value" : 1 },
+    { "source" : 2, "target" : 5, "value" : 1 },
+    { "source" : 4, "target" : 6, "value" : 1 },
+    { "source" : 4, "target" : 7, "value" : 1 },
+    { "source" : 4, "target" : 8, "value" : 1 },
+    { "source" : 5, "target" : 9, "value" : 1 },
+    { "source" : 5, "target" : 10, "value" : 1 },
+    { "source" : 5, "target" : 11, "value" : 1 },
+    { "source" : 3, "target" : 12, "value" : 1 },
+    { "source" : 12, "target" : 13, "value" : 1 },
+    { "source" : 3, "target" : 14, "value" : 1 },
+    { "source" : 14, "target" : 15, "value" : 1 },
+    { "source" : 1, "target" : 16, "value" : 1 },
+    { "source" : 16, "target" : 17, "value" : 1 },
+    { "source" : 16, "target" : 18, "value" : 1 },
+    { "source" : 16, "target" : 19, "value" : 1 },
+    { "source" : 16, "target" : 20, "value" : 1 },
+    { "source" : 16, "target" : 21, "value" : 1 },
+    { "source" : 1, "target" : 22, "value" : 1 },
+    { "source" : 22, "target" : 23, "value" : 1 },
+    { "source" : 22, "target" : 24, "value" : 1 },
+    { "source" : 22, "target" : 25, "value" : 1 },
+    { "source" : 18, "target" : 26, "value" : 1 }, //js libraries
+    { "source" : 18, "target" : 27, "value" : 1 },
+    { "source" : 18, "target" : 28, "value" : 1 },
+    { "source" : 18, "target" : 29, "value" : 1 },
+    { "source" : 18, "target" : 30, "value" : 1 },
+    { "source" : 18, "target" : 31, "value" : 1 },
+    { "source" : 18, "target" : 32, "value" : 1 },
+    { "source" : 1, "target" : 33, "value" : 1 },
+    { "source" : 33, "target" : 34, "value" : 1 },
+    { "source" : 33, "target" : 35, "value" : 1 },
+    { "source" : 33, "target" : 36, "value" : 1 },
+    { "source" : 33, "target" : 37, "value" : 1 },
+    { "source" : 33, "target" : 38, "value" : 1 },
+    { "source" : 1, "target" : 39, "value" : 1 },
+    { "source" : 39, "target" : 40, "value" : 1 },
+    { "source" : 39, "target" : 41, "value" : 1 },
+    { "source" : 39, "target" : 42, "value" : 1 },
+    { "source" : 39, "target" : 43, "value" : 1 },
+    { "source" : 1, "target" : 44, "value" : 1 },
+    { "source" : 44, "target" : 45, "value" : 1 },
+    { "source" : 44, "target" : 46, "value" : 1 },
+    { "source" : 45, "target" : 47, "value" : 1 },
+    { "source" : 45, "target" : 48, "value" : 1 },
+    { "source" : 45, "target" : 49, "value" : 1 },
+    { "source" : 45, "target" : 50, "value" : 1 },
+    { "source" : 45, "target" : 51, "value" : 1 }
+  ] ;
+  var nodes = [
+    { "name" : "Nick Lombardi", "group" : 25 },
+    { "name" : "Technical Skills", "group" : 20 },
+    { "name" : "Education", "group" : 20 },
+    { "name" : "Certifications", "group" : 20 },
+    { "name" : "General Assembly", "group" : 12 },
+    { "name" : "James Madison University", "group" : 12 },
+    { "name" : "New York", "group" : 5 },
+    { "name" : "Web Development Immersive Graduate", "group" : 5 },
+    { "name" : "September 2013", "group" : 5 },
+    { "name" : "Harrisonburg, VA", "group" : 5 },
+    { "name" : "Bachelor of Science", "group" : 5 },
+    { "name" : "May 2003", "group" : 5 },
+    { "name" : "Apple Small Device Certification", "group" : 12 },
+    { "name" : "iOS software and hardware certified", "group" : 5 },
+    { "name" : "AlphaGraphics Color Certification", "group" : 12 },
+    { "name" : "Awarded for achieving consistant quality in attaining specific color target parameters", "group" : 5 },
+    { "name" : "Programming Languages", "group" : 12 },
+    { "name" : "Ruby", "group" : 10 }, //17
+    { "name" : "Javascript", "group" : 10 },
+    { "name" : "HTML", "group" : 5 },
+    { "name" : "CSS", "group" : 5 },
+    { "name" : "ERB", "group" : 5 }, //21
+    { "name" : "Frameworks", "group" : 12 },
+    { "name" : "Rails", "group" : 8 }, //23
+    { "name" : "Sinatra", "group" : 5 },
+    { "name" : "WordPress", "group" : 5 },
+    { "name" : "D3", "group" : 8},
+    { "name" : "jQuery", "group" : 5 },
+    { "name" : "AJAX", "group" : 5 },
+    { "name" : "Backbone", "group" : 5 },
+    { "name" : "JSON", "group" : 5 },
+    { "name" : "Handlebars", "group" : 5 },
+    { "name" : "Underscore", "group" : 5 },
+    { "name" : "Testing Tools", "group" : 12 },
+    { "name" : "RSpec", "group" : 5 },
+    { "name" : "Capybara", "group" : 5 },
+    { "name" : "Jasmine", "group" : 5 },
+    { "name" : "FactoryGirl", "group" : 5 },
+    { "name" : "Chrome Developer Tools", "group" : 5 },
+    { "name" : "Web Servers", "group" : 12 }, //39
+    { "name" : "Unicorn", "group" : 5 },
+    { "name" : "Puma", "group" : 5 },
+    { "name" : "Thin", "group" : 5 },
+    { "name" : "Webrick", "group" : 5 },
+    { "name" : "Deployment", "group" : 12 }, //44
+    { "name" : "Heroku", "group" : 10 }, //45
+    { "name" : "AWS", "group" : 5 },
+    { "name" : "Dalli", "group" : 5 },
+    { "name" : "Memcache", "group" : 5 },
+    { "name" : "NewRelic", "group" : 5 },
+    { "name" : "Blitz.io", "group" : 5 },
+    { "name" : "Heroku Scheduler", "group" : 5 }
+  ] ;
+  var width = 1200
+  height = 800;
+
+var color = d3.scale.category10();
+
+var force = d3.layout.force()
+.nodes(d3.values(nodes))
+.links(links)
+.size([width, height])
+.linkDistance(50)
+.charge(-700)
+.on("tick", tick)
+.start();
+
+var svg = d3.select("body").append("svg")
+.attr("width", width)
+.attr("height", height);
+
+var link = svg.selectAll(".link")
+.data(force.links())
+.enter().append("line")
+.attr("class", "link")
+.style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+var node = svg.selectAll(".node")
+.data(force.nodes())
+.enter().append("g")
+.attr("class", "node")
+.style("fill", function(d) { return color(d.group); })
+.style("opacity", 1)
+.on("mouseover", mouseover)
+.on("mouseout", mouseout)
+.call(force.drag);
+
+node.append("circle")
+.attr("r", function(d) { return (d.group); })
+.attr("stroke", function(d) { return d3.rgb(color(d.group)).brighter(); })
+
+node.append("svg:text")
+.style("fill", "#666666")
+.style("opacity", 0)
+.attr("class", "nodetext")
+.attr("width", 100)
+.attr("height", 100)
+.text(function(d) { return d.name });
+
+function tick() {
+link
+.attr("x1", function(d) { return d.source.x; })
+.attr("y1", function(d) { return d.source.y; })
+.attr("x2", function(d) { return d.target.x; })
+.attr("y2", function(d) { return d.target.y; });
+
+node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+}
+
+function mouseover() {
+d3.select(this).select("circle").transition()
+.ease("elastic")
+.duration(750)
+.style("fill", function(d) { return d3.rgb(color(d.group)).brighter() })
+.attr("stroke", function(d) { return d3.rgb(color(d.group)).darker(); })
+.attr("r", function(d) { return (d.group * 1.3); });
+d3.select(this).select("text").transition()
+.duration(750)
+.style("fill", "#666666")
+.attr("x", function(d) { return (d.group); })
+.attr("y", function(d) { return +- (d.group); })
+.style("stroke-width", "0.15px")
+.style("opacity", 1);
+}
+
+function mouseout() {
+d3.select(this).select("circle").transition()
+.ease("elastic")
+.duration(750)
+.attr("stroke", function(d) { return d3.rgb(color(d.group)).brighter(); })
+.style("fill", function(d) { return color(d.group); })
+.attr("r", function(d) { return (d.group); });
+}
+
+</script>
