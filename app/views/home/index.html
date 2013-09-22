@@ -3,6 +3,7 @@
     { "source" : 0, "target" : 1, "value" : 1 },
     { "source" : 0, "target" : 2, "value" : 1 },
     { "source" : 0, "target" : 3, "value" : 1 },
+    { "source" : 0, "target" : 57, "value" : 1 },
     { "source" : 2, "target" : 4, "value" : 1 },
     { "source" : 2, "target" : 5, "value" : 1 },
     { "source" : 4, "target" : 6, "value" : 1 },
@@ -50,7 +51,13 @@
     { "source" : 45, "target" : 48, "value" : 1 },
     { "source" : 45, "target" : 49, "value" : 1 },
     { "source" : 45, "target" : 50, "value" : 1 },
-    { "source" : 45, "target" : 51, "value" : 1 }
+    { "source" : 17, "target" : 23, "value" : 1 }, // ruby - rails
+    { "source" : 17, "target" : 51, "value" : 1 },
+    { "source" : 51, "target" : 52, "value" : 1 },
+    { "source" : 51, "target" : 53, "value" : 1 },
+    { "source" : 51, "target" : 54, "value" : 1 },
+    { "source" : 51, "target" : 55, "value" : 1 },
+    { "source" : 51, "target" : 56, "value" : 1 }
   ] ;
   var nodes = [
     { "name" : "Nick Lombardi", "group" : 25 },
@@ -76,7 +83,7 @@
     { "name" : "CSS", "group" : 5 },
     { "name" : "ERB", "group" : 5 }, //21
     { "name" : "Frameworks", "group" : 12 },
-    { "name" : "Rails", "group" : 8 }, //23
+    { "name" : "Rails", "group" : 10 }, //23
     { "name" : "Sinatra", "group" : 5 },
     { "name" : "WordPress", "group" : 5 },
     { "name" : "D3", "group" : 8},
@@ -104,10 +111,20 @@
     { "name" : "Memcache", "group" : 5 },
     { "name" : "NewRelic", "group" : 5 },
     { "name" : "Blitz.io", "group" : 5 },
-    { "name" : "Heroku Scheduler", "group" : 5 }
+    { "name" : "Gems", "group" : 8 }, //51
+    { "name" : "Devise", "group" : 5 },
+    { "name" : "Active Admin", "group" : 5 },
+    { "name" : "DotEnv", "group" : 5 },
+    { "name" : "Nokogiri", "group" : 5 },
+    { "name" : "Paperclip", "group" : 5 }, //56
+    { "name" : "Experience", "group" : 20 }
   ] ;
   var width = 1200
-  height = 800;
+  height = 1000;
+
+  var svg = d3.select("body").append("svg")
+            .attr("viewBox", "0 0 " + width + " " + height )
+            .attr("preserveAspectRatio", "xMidYMid meet");
 
 var color = d3.scale.category10();
 
@@ -115,14 +132,14 @@ var force = d3.layout.force()
 .nodes(d3.values(nodes))
 .links(links)
 .size([width, height])
-.linkDistance(50)
+.linkDistance(20)
 .charge(-700)
 .on("tick", tick)
 .start();
 
-var svg = d3.select("body").append("svg")
-.attr("width", width)
-.attr("height", height);
+// var svg = d3.select("body").append("svg")
+// .attr("width", width)
+// .attr("height", height);
 
 var link = svg.selectAll(".link")
 .data(force.links())
@@ -188,3 +205,8 @@ d3.select(this).select("circle").transition()
 }
 
 </script>
+
+<svg id="chart" width="1200" height="1000"
+  viewBox="0 0 1200 1000"
+  preserveAspectRatio="xMidYMid">
+</svg>
