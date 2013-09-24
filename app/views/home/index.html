@@ -8,7 +8,7 @@
     { "source" : 2, "target" : 5, "value" : 1 },
     { "source" : 4, "target" : 6, "value" : 1 },
     { "source" : 4, "target" : 7, "value" : 1 },
-    { "source" : 4, "target" : 8, "value" : 1 },
+    { "source" : 7, "target" : 8, "value" : 1 },
     { "source" : 5, "target" : 9, "value" : 1 },
     { "source" : 5, "target" : 10, "value" : 1 },
     { "source" : 5, "target" : 11, "value" : 1 },
@@ -93,18 +93,25 @@
     { "source" : 86, "target" : 89, "value" : 1 },
     { "source" : 86, "target" : 90, "value" : 1 },
     { "source" : 86, "target" : 91, "value" : 1 },
-    { "source" : 6, "target" : 86, "value" : 1 }
+    { "source" : 6, "target" : 86, "value" : 1 },
+    { "source" : 57, "target" : 4, "value" : 1 },
+    { "source" : 4, "target" : 92, "value" : 1 },
+    { "source" : 7, "target" : 93, "value" : 1 },
+    { "source" : 7, "target" : 94, "value" : 1 },
+    { "source" : 7, "target" : 95, "value" : 1 },
+    { "source" : 4, "target" : 96, "value" : 1 },
+    { "source" : 96, "target" : 97, "value" : 1 }
   ] ;
   var nodes = [
     { "name" : "Nick Lombardi", "group" : 25 },
     { "name" : "Technical Skills", "group" : 20 },
     { "name" : "Education", "group" : 20 },
     { "name" : "Certifications", "group" : 20 },
-    { "name" : "General Assembly", "group" : 12 },
-    { "name" : "James Madison University", "group" : 12 },
+    { "name" : "General Assembly", "group" : 12 }, //4
+    { "name" : "James Madison University", "group" : 12 }, //5
     { "name" : "New York", "group" : 5 }, //6
-    { "name" : "Web Development Immersive Graduate", "group" : 5 },
-    { "name" : "September 2013", "group" : 5 },
+    { "name" : "Web Development Immersive Graduate", "group" : 10 }, //7
+    { "name" : "June 2013 - September 2013", "group" : 5 }, //8
     { "name" : "Harrisonburg, VA", "group" : 5 },
     { "name" : "Bachelor of Science", "group" : 5 },
     { "name" : "May 2003", "group" : 5 },
@@ -153,7 +160,7 @@
     { "name" : "DotEnv", "group" : 5 },
     { "name" : "Nokogiri", "group" : 5 },
     { "name" : "Paperclip", "group" : 5 }, //56
-    { "name" : "Experience", "group" : 20 }, //57
+    { "name" : "Experience", "group" : 20 }, //57******
     { "name" : "Version Control", "group" : 12 },
     { "name" : "Git", "group" : 5 },
     { "name" : "Github", "group" : 5 },
@@ -180,18 +187,24 @@
     { "name" : "QuarkXPress", "group" : 5 },
     { "name" : "Video", "group" : 12 },
     { "name" : "After Effects", "group" : 5 },
-    { "name" : "AFinal Cut Pro X", "group" : 5 },
+    { "name" : "Final Cut Pro X", "group" : 5 },
     { "name" : "Maxon Cinema 4D", "group" : 5 },
     { "name" : "One Month Rails", "group" : 12 }, //86
     { "name" : "September 2013 - Present", "group" : 5 },
     { "name" : "One Month Rails promises to teach students to code Ruby on Rails in One Month", "group" : 5 },
     { "name" : "Developed updated site with new curriculum and migrated to Rails 4 and Bootstrap 3", "group" : 5 },
     { "name" : "Increased customer satisfaction by leading the technical support team to Y Combinator (YC S13) startup", "group" : 5 },
-    { "name" : "reated strategic support flow integration based on analytics and solution patterns.", "group" : 5 }
+    { "name" : "Created strategic support flow integration based on analytics and solution patterns", "group" : 5 },
+    { "name" : "GA’s goal as a professional educator and incubator is to transform thinkers into creators", "group" : 5 }, //92
+    { "name" : "Graduated Web Development Immersive through 12 weeks of immersive instruction ", "group" : 5 },
+    { "name" : "Project production included management, wireframing, back and front end development, database management, version control, deployment, testing and analytics", "group" : 5 },
+    { "name" : "Final project, MadeInNY.io is a data visualization of the NY startup scene and is currently enjoying a healthy amount of web traffic", "group" : 5 },
+    { "name" : "Teaching Assistant for GA’s Programming for Non Programmers class", "group" : 10 },
+    { "name" : "September 2013 - Present", "group" : 5 },
   ] ;
 
   var width = 1200
-  height = 1000;
+  height = 1100;
 
   var svg = d3.select("body").append("svg")
             .attr("viewBox", "0 0 " + width + " " + height )
