@@ -9,6 +9,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'puma'
 end
 
 gem 'sass-rails', '~> 4.0.0'
@@ -26,6 +27,3 @@ gem 'newrelic_rpm'
 gem 'memcachier'
 gem 'dalli'
 gem 'rack-cache'
-
-# Use unicorn as the app server
-# gem 'unicorn'
