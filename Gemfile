@@ -23,6 +23,9 @@ group :doc do
 end
 
 gem 'newrelic_rpm'
+gem 'memcachier'
+gem 'dalli'
+gem 'rack-cache'
 
 # Use unicorn as the app server
 # gem 'unicorn'
