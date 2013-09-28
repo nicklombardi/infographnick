@@ -41,12 +41,12 @@ pointer-events: none;
 }*/
 
 a {
-  font-size: 24px;
+  font-size: 20px;
   color: #333333;
 }
 
 .icons {
-  margin-top: -6px;
+  margin-top: -4.5px;
 }
 
 .nav > li > a:hover,
