@@ -11,7 +11,7 @@ Infographnick::Application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
 
 
   client = Dalli::Client.new
@@ -22,8 +22,6 @@ Infographnick::Application.configure do
   }
 
   config.cache_store = :dalli_store
-
-  config.serve_static_assets = true
 
   config.static_cache_control = "public, max-age=2592000"
 
