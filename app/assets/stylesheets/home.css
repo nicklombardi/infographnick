@@ -22,7 +22,7 @@ stroke-width: 2px;
 }
 .node circle {
 opacity: 1;
-stroke-width: 1px;
+/*stroke-width: 1px;*/
 }
 .node:not(:hover) .nodetext {
 display: none;

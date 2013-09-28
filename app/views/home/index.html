@@ -248,7 +248,7 @@ node.append("circle")
 .attr("r", function(d) { return (d.group); })
 .attr("stroke", function(d) { return d3.rgb(color(d.group)).brighter(); })
 
-node.append("svg:text")
+node.append("svg:div") //
 .style("fill", "#666666")
 .style("opacity", 0)
 .attr("class", "nodetext")
@@ -273,7 +273,7 @@ d3.select(this).select("circle").transition()
 .style("fill", function(d) { return d3.rgb(color(d.group)).brighter() })
 .attr("stroke", function(d) { return d3.rgb(color(d.group)).darker(); })
 .attr("r", function(d) { return (d.group * 1.3); });
-d3.select(this).select("text").transition()
+d3.select(this).select("div").transition() //
 .duration(750)
 .style("fill", "#666666")
 .attr("x", function(d) { return (d.group); })
