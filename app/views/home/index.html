@@ -210,6 +210,11 @@
     { "name" : "Created marketing materials, and analyzed metrics to increase web traffic for Taboola", "group" : 5 }
   ] ;
 
+// links.forEach(function(link) {
+//   link.source = nodes[link.source] || (nodes[link.source] = {name: link.source, tooltip: link.tooltip});
+//   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target, tooltip: link.tooltip});
+// });
+
 var width = window.innerWidth;
 var height = window.innerHeight;
 
@@ -242,19 +247,23 @@ var node = svg.selectAll(".node")
 .style("opacity", 1)
 .on("mouseover", mouseover)
 .on("mouseout", mouseout)
-.call(force.drag);
+.call(force.drag)
+.call(d3.helper.tooltip()
+  .attr("class", function(d, i) { return d + " " +  i + " A"; })
+  .attr("d", "b")
+  .text(function(d) { return d.name }));
 
 node.append("circle")
 .attr("r", function(d) { return (d.group); })
 .attr("stroke", function(d) { return d3.rgb(color(d.group)).brighter(); })
 
-node.append("svg:div") //
-.style("fill", "#666666")
-.style("opacity", 0)
-.attr("class", "nodetext")
-.attr("width", 100)
-.attr("height", 100)
-.text(function(d) { return d.name });
+// node.append("svg:text")
+// .style("fill", "#666666")
+// .style("opacity", 0)
+// .attr("class", "nodetext")
+// .attr("width", 100)
+// .attr("height", 100)
+// .text(function(d) { return d.name });
 
 function tick() {
 link
@@ -273,7 +282,7 @@ d3.select(this).select("circle").transition()
 .style("fill", function(d) { return d3.rgb(color(d.group)).brighter() })
 .attr("stroke", function(d) { return d3.rgb(color(d.group)).darker(); })
 .attr("r", function(d) { return (d.group * 1.3); });
-d3.select(this).select("div").transition() //
+d3.select(this).select("text").transition() //
 .duration(750)
 .style("fill", "#666666")
 .attr("x", function(d) { return (d.group); })

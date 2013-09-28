@@ -86,3 +86,15 @@ a {
   background-color: transparent;
   cursor: default;
 }
+
+.tooltip {
+  position: absolute;
+  -moz-border-radius:4px;
+  border-radius: 4px;
+  border: 1px solid #DBDCDE;
+  background: #ffffff;
+  opacity: 1;
+  padding: 10px;
+  font-size: 16px;
+  z-index: 10;
+}
