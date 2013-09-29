@@ -104,10 +104,29 @@
     { "source" : 97, "target" : 98, "value" : 1 },
     { "source" : 97, "target" : 99, "value" : 1 },
     { "source" : 97, "target" : 100, "value" : 1 },
-    { "source" : 87, "target" : 96, "value" : 1 }
+    { "source" : 87, "target" : 96, "value" : 1 },
+    { "source" : 33, "target" : 101, "value" : 1 },
+    { "source" : 51, "target" : 102, "value" : 1 },
+    { "source" : 57, "target" : 103, "value" : 1 },
+    { "source" : 103, "target" : 104, "value" : 1 },
+    { "source" : 103, "target" : 105, "value" : 1 },
+    { "source" : 103, "target" : 106, "value" : 1 },
+    { "source" : 106, "target" : 107, "value" : 1 },
+    { "source" : 103, "target" : 108, "value" : 1 },
+    { "source" : 108, "target" : 109, "value" : 1 },
+    { "source" : 57, "target" : 110, "value" : 1 },
+    { "source" : 110, "target" : 111, "value" : 1 },
+    { "source" : 110, "target" : 112, "value" : 1 },
+    { "source" : 110, "target" : 113, "value" : 1 },
+    { "source" : 110, "target" : 114, "value" : 1 },
+    { "source" : 110, "target" : 115, "value" : 1 },
+    { "source" : 110, "target" : 116, "value" : 1 },
+    { "source" : 110, "target" : 117, "value" : 1 },
+    { "source" : 110, "target" : 118, "value" : 1 },
+    { "source" : 110, "target" : 119, "value" : 1 }
   ] ;
   var nodes = [
-    { "name" : "Nick Lombardi", "group" : 30 },
+    { "name" : "Nick Lombardi", "group" : 25 },
     { "name" : "Technical Skills", "group" : 20 },
     { "name" : "Education", "group" : 20 },
     { "name" : "Certifications", "group" : 20 },
@@ -140,7 +159,7 @@
     { "name" : "JSON", "group" : 5 },
     { "name" : "Handlebars", "group" : 5 },
     { "name" : "Underscore", "group" : 5 },
-    { "name" : "Testing Tools", "group" : 12 },
+    { "name" : "Testing Tools", "group" : 12 }, //33
     { "name" : "RSpec", "group" : 5 },
     { "name" : "Capybara", "group" : 5 },
     { "name" : "Jasmine", "group" : 5 },
@@ -207,8 +226,27 @@
     { "name" : "Independent Consulting", "group" : 12 },
     { "name" : "September 2012 - present", "group" : 5 },
     { "name" : "Worked closely with executives of the video discovery start-up Taboola in designing UX mocks", "group" : 5 },
-    { "name" : "Created marketing materials, and analyzed metrics to increase web traffic for Taboola", "group" : 5 }
-  ] ;
+    { "name" : "Created marketing materials, and analyzed metrics to increase web traffic for Taboola", "group" : 5 },
+    { "name" : "Codeship", "group" : 5 }, //101
+    { "name" : "Pygments", "group" : 5 },
+    { "name" : "Apple, Inc.", "group" : 12 }, //103
+    { "name" : "Paramus, NJ", "group" : 5 },
+    { "name" : "July 2011 - May 2013", "group" : 5 },
+    { "name" : "Mobile Genius", "group" : 10 },
+    { "name" : "Solved mobile device technical issues in a fast paced environment", "group" : 5 },
+    { "name" : "One To One Creative", "group" : 10 },
+    { "name" : "Displayed a contagious passion for Apple’s philosophy by providing an amazing learning experience", "group" : 5 },
+    { "name" : "AlphaGraphics", "group" : 12 },
+    { "name" : "Midland Park, NJ", "group" : 5 },
+    { "name" : "May 2004 - May 2013", "group" : 5 },
+    { "name" : "AG is a marketing communications agency specializing in all forms of advertising", "group" : 5 },
+    { "name" : "Enhanced clients’ visual representation by creating cohesive marketing solutions resulting in a 99% ISO rating", "group" : 5 },
+    { "name" : "Specialized in brand identity and consistency throughout City Chemist’s line of products including Estée Lauder", "group" : 5 },
+    { "name" : "Grew the agency from $750k to $1.25 million in revenue a year in a fast paced environment excelling in managing communication and product development", "group" : 5 },
+    { "name" : "Designed and built the company Digital Asset Management (DAM) system from the ground up", "group" : 5 },
+    { "name" : "Migrated AlphaGraphics exclusively to an automated pdf workflow which increased productivity by 200%", "group" : 5 },
+    { "name" : "Implemented a color-certified workflow which increased efficiency, managed consistency, and eliminated mistakes", "group" : 5 }
+  ];
 
 // links.forEach(function(link) {
 //   link.source = nodes[link.source] || (nodes[link.source] = {name: link.source, tooltip: link.tooltip});
@@ -277,7 +315,7 @@ d3.select(this).select("circle").transition()
 function mouseout() {
 d3.select(this).select("circle").transition()
 .ease("elastic")
-.duration(750)
+.duration(1250)
 .attr("stroke", function(d) { return d3.rgb(color(d.group)).brighter(); })
 .style("fill", function(d) { return color(d.group); })
 .attr("r", function(d) { return (d.group); });
