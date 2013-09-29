@@ -121,8 +121,8 @@
     { "name" : "May 2003", "group" : 5 },
     { "name" : "Apple Small Device Certification", "group" : 12 },
     { "name" : "iOS software and hardware certified", "group" : 5 },
-    { "name" : "AlphaGraphics Color Certification", "group" : 12 },
-    { "name" : "Awarded for achieving consistant quality in attaining specific color target parameters", "group" : 5 },
+    { "name" : "AlphaGraphics Color Certification", "group" : 12 }, //14
+    { "name" : "Awarded for consistant quality in attaining specific color target parameters", "group" : 5 },
     { "name" : "Programming Languages", "group" : 12 },
     { "name" : "Ruby", "group" : 10 }, //17
     { "name" : "Javascript", "group" : 10 },
@@ -247,15 +247,17 @@ var node = svg.selectAll(".node")
 .style("opacity", 1)
 .on("mouseover", mouseover)
 .on("mouseout", mouseout)
-.call(force.drag)
-.call(d3.helper.tooltip()
-  .attr("class", function(d, i) { return d + " " +  i + " A"; })
-  .attr("d", "b")
-  .text(function(d) { return d.name }));
+.call(force.drag);
+// .call(d3.helper.tooltip()
+//   .attr("class", function(d, i) { return d + " " +  i + " A"; })
+//   .text(function(d) { return d.name }));
 
 node.append("circle")
 .attr("r", function(d) { return (d.group); })
 .attr("stroke", function(d) { return d3.rgb(color(d.group)).brighter(); })
+.call(d3.helper.tooltip()
+  .attr("class", function(d, i) { return d + " " +  i + " A"; })
+  .text(function(d) { return d.name }))
 
 // node.append("svg:text")
 // .style("fill", "#666666")
@@ -282,13 +284,13 @@ d3.select(this).select("circle").transition()
 .style("fill", function(d) { return d3.rgb(color(d.group)).brighter() })
 .attr("stroke", function(d) { return d3.rgb(color(d.group)).darker(); })
 .attr("r", function(d) { return (d.group * 1.3); });
-d3.select(this).select("text").transition() //
-.duration(750)
-.style("fill", "#666666")
-.attr("x", function(d) { return (d.group); })
-.attr("y", function(d) { return +- (d.group); })
-.style("stroke-width", "0.15px")
-.style("opacity", 1);
+// d3.select(this).select("text").transition() //
+// .duration(750)
+// .style("fill", "#666666")
+// .attr("x", function(d) { return (d.group); })
+// .attr("y", function(d) { return +- (d.group); })
+// .style("stroke-width", "0.15px")
+// .style("opacity", 1);
 }
 
 function mouseout() {
