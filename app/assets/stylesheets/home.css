@@ -1,18 +1,15 @@
 html {
   width: 100%;
-  /*max-height: 600px;*/
-  /*height:auto !important;*/
 }
 
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 200;
-  /*background-image: url(/assets/map2.svg);*/
+  /*background-image: url(/assets/stars.jpg);*/
   /*background-repeat: no-repeat;*/
   background-color: #F5F5F5;
   position: absolute;
   width: 100%;
-  /*max-height: 100%;*/
 }
 
 .link {
@@ -35,36 +32,31 @@ stroke-width: 0.15px;
 pointer-events: none;
 }
 
-/*#chart {
-  position: absolute;
-  margin-top: 50px;
-}*/
-
 a {
   font-size: 20px;
-  color: #333333;
+  color: #111111;
 }
 
 .icons {
-  margin-top: -4.5px;
+  margin-top: -1.5px;
 }
 
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  color: #999999;
+  color: #666666;
   background-color: transparent;
 }
 
 .navbar {
   position: absolute;
-  min-height: 50px;
+  max-height: 50px;
   margin-bottom: 0;
-  background-color: transparent;
+  background-color: #ffffff;
   border: none;
   z-index: 5;
-/*  border-bottom: 1px solid #FFFFFF;
-  opacity: 1;*/
+  border-bottom: 1px solid #D8D8D8;
+  opacity: .7;
 }
 
 .navbar-brand {
@@ -81,7 +73,7 @@ a {
 
 .navbar-brand:hover,
 .navbar-brand:focus {
-  color: #333333;
+  color: #111111;
   text-decoration: none;
   background-color: transparent;
   cursor: default;

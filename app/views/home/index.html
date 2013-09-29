@@ -107,7 +107,7 @@
     { "source" : 87, "target" : 96, "value" : 1 }
   ] ;
   var nodes = [
-    { "name" : "Nick Lombardi", "group" : 25 },
+    { "name" : "Nick Lombardi", "group" : 30 },
     { "name" : "Technical Skills", "group" : 20 },
     { "name" : "Education", "group" : 20 },
     { "name" : "Certifications", "group" : 20 },
@@ -219,8 +219,7 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 
 var svg = d3.select("body").append("svg")
-  .attr("viewBox", "0 0 " + width + " " + height )
-  .attr("preserveAspectRatio", "xMinYMin slice");
+  .attr("viewBox", "0 0 " + width + " " + height );
 
 var color = d3.scale.category10();
 
@@ -228,8 +227,8 @@ var force = d3.layout.force()
 .nodes(d3.values(nodes))
 .links(links)
 .size([width, height])
-.linkDistance(20)
-.charge(-700)
+.linkDistance(10)
+.charge(-400)
 .on("tick", tick)
 .start();
 
@@ -248,9 +247,6 @@ var node = svg.selectAll(".node")
 .on("mouseover", mouseover)
 .on("mouseout", mouseout)
 .call(force.drag);
-// .call(d3.helper.tooltip()
-//   .attr("class", function(d, i) { return d + " " +  i + " A"; })
-//   .text(function(d) { return d.name }));
 
 node.append("circle")
 .attr("r", function(d) { return (d.group); })
@@ -258,14 +254,6 @@ node.append("circle")
 .call(d3.helper.tooltip()
   .attr("class", function(d, i) { return d + " " +  i + " A"; })
   .text(function(d) { return d.name }))
-
-// node.append("svg:text")
-// .style("fill", "#666666")
-// .style("opacity", 0)
-// .attr("class", "nodetext")
-// .attr("width", 100)
-// .attr("height", 100)
-// .text(function(d) { return d.name });
 
 function tick() {
 link
@@ -283,14 +271,7 @@ d3.select(this).select("circle").transition()
 .duration(750)
 .style("fill", function(d) { return d3.rgb(color(d.group)).brighter() })
 .attr("stroke", function(d) { return d3.rgb(color(d.group)).darker(); })
-.attr("r", function(d) { return (d.group * 1.3); });
-// d3.select(this).select("text").transition() //
-// .duration(750)
-// .style("fill", "#666666")
-// .attr("x", function(d) { return (d.group); })
-// .attr("y", function(d) { return +- (d.group); })
-// .style("stroke-width", "0.15px")
-// .style("opacity", 1);
+.attr("r", function(d) { return (d.group * 1.5); });
 }
 
 function mouseout() {
@@ -303,10 +284,6 @@ d3.select(this).select("circle").transition()
 }
 
 </script>
-
-<svg id="chart">
-</svg>
-
 
 
 
