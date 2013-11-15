@@ -29,4 +29,3 @@ gem 'memcachier'
 gem 'dalli'
 gem 'rack-cache'
 gem 'rack-google-analytics'
-
